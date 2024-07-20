@@ -1,0 +1,16 @@
+.container1{
+    width: 50%;
+}
+
+.container1 div{
+    width: 50%;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: bolder;
+}
+
+@media (max-width:800px) {
+    .container1{
+        width: 100%;
+    }
+}

@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 10px 20px;
+    background-color: #000000c2;
+    font-family: 'Times New Roman', Times, serif;
+    /* border-radius: 10px; */
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid white;
+}
+
+.profile-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.login-button {
+    padding: 5px 10px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .navbar-left {
+        flex: 1;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .navbar-right {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 40%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.close-popup-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.login-button {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+    .popup {
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
+.signup-buttom{
+    border: none;
+    background-color: transparent;
+    color: blue;
+    }
+  .signup-buttom:hover{
+    text-decoration: underline;
+  }
