@@ -26,7 +26,7 @@ export default function AllScheams() {
         {data && data.length>0 ?<table className="responsive-table">
         <thead>
           <tr>
-            <th>Image</th>
+            <th>Sr.</th>
             <th>Name</th>
             <th style={{textAlign:"center"}}>View</th>
           </tr>
@@ -34,13 +34,13 @@ export default function AllScheams() {
         <tbody>
           {data.map((item, index) => (
             <tr key={index}>
-              <td style={{width:"5%"}}>{index+1}</td>
+              <td style={{width:"5%"}}>{index+1}.</td>
               <td style={{width:"85%"}}>{item.title}</td>
               <td style={{textAlign:"center"}}><Link to={`/viewschem/${item._id}`}>View!</Link></td>
             </tr>
           ))}
         </tbody>
-      </table>: <h1>no schems yet</h1>}
+      </table>: <h2 className='d-flex justify-content-center'>no schems yet</h2>}
     </div>
   )
 }

@@ -18,11 +18,9 @@ body{
 
 
 @media (max-width:500px) {
-    .form-pd div{
-        /* justify-content: center; */
-        /* width: 100%; */
+    .form-pd input{
+        width: 100%;
         margin-left: 3px;
-        /* border: 2px solid red; */
     }
 }
 
@@ -32,3 +30,50 @@ body{
     }
     
 }
+
+.image-container {
+    display: flex;
+    width: 100%;
+    max-width: 123px;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .image-container input[type="file"] {
+    width: 100%;
+  }
+  
+  button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    border-radius: 15px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 600px) {
+    .image-container {
+      max-width: 100px; /* Adjust for smaller screens */
+      height: 100px; /* Adjust for smaller screens */
+    }
+  
+    button {
+      padding: 8px 16px;
+    }
+  }
+  

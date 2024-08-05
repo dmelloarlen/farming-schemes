@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 export default function ManageScheams() {
     const [data,setData]=useState()
@@ -39,7 +41,7 @@ export default function ManageScheams() {
   return (
     <div>
         <div className='container'>
-            <button onClick={()=>Navigate('/')}>Go Back</button>
+            <button className='my-3' onClick={()=>window.history.back()}>Go Back</button>
         {data && data.length>0 ?<table className="responsive-table">
         <thead>
           <tr>
@@ -49,12 +51,12 @@ export default function ManageScheams() {
           </tr>
         </thead>
         <tbody>
-          {data.map((item, index) => (
+          {data && data.map((item, index) => (
             <tr key={index}>
               <td style={{width:"5%"}}>{index+1}</td>
               <td style={{width:"85%"}}>{item.title}</td>
               <td style={{textAlign:"center"}}><Link to={`/viewschem/${item._id}`}>View!</Link></td>
-              <td style={{textAlign:"center"}}><button type='button' onClick={()=>handleDeleteClick(item._id)}>Delete</button></td>
+              <td style={{textAlign:"center"}}><button type='button' onClick={()=>handleDeleteClick(item._id)} style={{}}><i className="fas fa-trash"></i></button></td>
             </tr>
           ))}
         </tbody>

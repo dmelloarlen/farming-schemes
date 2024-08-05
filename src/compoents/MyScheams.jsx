@@ -30,6 +30,7 @@ useEffect(() => {
                       const res1 = await axios.get(
                         `http://localhost:4000/scheam/schem/${scheamId}`
                       );
+                      console.log(res1.data)
                       return res1.data;
                     })
                   );
@@ -50,7 +51,8 @@ useEffect(() => {
 }, []);
 
   return (
-    <div className={isAdmin?"container mt-3":""}>
+    <div className={isAdmin?"container":""}>
+      {isAdmin &&  <button className='my-3' onClick={()=>window.history.back()}>Go Back</button>}
        {data1 && data1.length>0 ?<table className="responsive-table">
         <thead>
           <tr>
@@ -60,7 +62,7 @@ useEffect(() => {
           </tr>
         </thead>
         <tbody>
-          {data1.map((item, index) => (
+          {data1 && data1.map((item, index) => (
             <tr key={index}>
               <td style={{width:"5%"}}>{index+1}</td>
               <td style={{width:"85%"}}>{item[0].title}</td>
@@ -68,7 +70,7 @@ useEffect(() => {
             </tr>
           ))}
         </tbody>
-      </table>: <h1>no schems yet</h1>}
+      </table>: <h2 className='d-flex justify-content-center'>no schems yet</h2>}
     </div>
   )
 }

@@ -65,6 +65,9 @@ const ViewApplication = () => {
   return (
     <div className="container border mt-3">
       {data && <div id='a'>
+      <div className="d-flex justify-content-end">
+            <small>Applied on {data.date}</small>
+      </div>
         <div className="row">
             <div className="column">
                 <span >
@@ -134,31 +137,21 @@ const ViewApplication = () => {
         <hr className='m-0 border border-dark'/>
         <div className="row">
               <div>
-                <p className="mb-1">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Dolorem, optio? Magnam mollitia nihil illum excepturi quis
-                  tempore neque facere deleniti in, quos, obcaecati omnis commodi,
-                  animi at. Porro, ducimus sapiente? Nemo exercitationem
-                  dignissimos velit ipsam fugiat blanditiis minus inventore
-                  pariatur eius, reiciendis a eveniet autem.ws
+                <p className="mb-1 mt-3">
+                I hereby affirm that the information I have provided in this form is accurate and truthful to the best of my knowledge. I understand and acknowledge that if any part of the information I have provided is found to be incorrect or misleading, I will bear full responsibility for any consequences that may arise. Furthermore, I agree to accept any disciplinary actions or penalties that may be imposed as a result of providing false or inaccurate information.
                 </p>
                 <label>
-                  I aggrie all above terms and conditions:
-                  <input type="checkbox" checked/>
-                </label>
-                <br />
-                <label>
-                  I aggrie all above terms and conditions:
-                  <input type="checkbox" checked/>
+                I have read the above statement and agree to its terms and conditions.
+                <input type="checkbox" checked/>
                 </label>
               </div>
         </div>
         </div>}
             <div className="d-flex justify-content-end mt-3">
-              <button type="button" onClick={()=>Navigate('/')}>Go Back</button>
-              <button type="button" onClick={handlePrintClick}>Print</button>
+              <button type="button" className='mx-1' onClick={()=>Navigate('/')}>Go Back</button>
+              <button type="button" className='mx-1' onClick={handlePrintClick}>Print</button>
               {
-                localStorage.getItem("isAdmin")=="false"?<button type="button" onClick={handleDeleteClick}>Delete Application</button>:<button type="button" onClick={handleApproveClick}>Approve Application</button> 
+                localStorage.getItem("isAdmin")=="false"?<button type="button" className='mx-1' onClick={handleDeleteClick}>Delete Application</button>:<button type="button" className='mx-1' onClick={handleApproveClick}>Approve Application</button> 
               }
             </div>
     </div>

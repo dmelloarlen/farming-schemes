@@ -40,10 +40,10 @@ console.log(content)
         <div className="container borde border-dark" id="a">
           <div className="border-bottom border-dark pb-2 text-center">
             <h2>
-              <strong>Farming Scheams Application</strong>
+              <strong>Farming Scheam Details</strong>
             </h2>
           </div>
-          {true && <>
+          {content && <>
             <div className="container text-center mt-5 mb-5">
                     <h5 className="text-break"><strong>{content.title} </strong></h5>
             </div>
@@ -51,14 +51,14 @@ console.log(content)
           </>}
         </div>
         <div className="d-flex justify-content-end mt-5">
-          <button onClick={()=>Navigate('/')} className="me-3">
+          <button onClick={()=>window.history.back()} className="me-3 py-1 px-2" style={{backgroundColor:"#007bff",color:"white",border:"none",borderRadius:"20px",fontSize:"18px",fontWeight:"bold",fontFamily:"serif"}}>
             Go Back
           </button>
-          <button onClick={handlePrintClick} className="me-3">
+          <button onClick={handlePrintClick} className="me-3 py-1 px-3" style={{backgroundColor:"#007bff",color:"white",border:"none",borderRadius:"20px",fontSize:"18px",fontWeight:"bold",fontFamily:"serif"}}>
             Print
           </button>
           {localStorage.getItem("isAdmin")==="false" && localStorage.getItem("state")==="true" &&
-            <button onClick={()=>Navigate(`/applynow/${a.id}`)} className="me-3">
+            <button onClick={()=>Navigate(`/applynow/${a.id}`)} className="me-3 py-1 px-2" style={{backgroundColor:"#007bff",color:"white",border:"none",borderRadius:"20px",fontSize:"18px",fontWeight:"bold",fontFamily:"serif"}}>
                 Apply Now
             </button>
           }

@@ -109,7 +109,6 @@ export default function SignUp() {
                 <button type="submit" className='submitButton'>Submit</button>
               </form>
             </div>
-
         </div>
       )
 }

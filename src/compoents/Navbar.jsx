@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../css/Navbar.css";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import userIcon from "../images/userIcon.png"
 import axios from "axios";
 import toast from "react-hot-toast";
 
@@ -22,7 +23,7 @@ export default function Navbar() {
         localStorage.setItem("state",false)
         setLogedin(false)
         setTimeout(() => {
-            Navigate('/')
+            Navigate('/') 
             window.location.reload()
         }, 700);
     }
@@ -71,17 +72,12 @@ export default function Navbar() {
         toast.error("Invlid Email or Password")
     }
   };
-
-  const handleSignUp = () => {
-    setIsOpen(false);
-    Navigate("/signup");
-  };
   return (
     <div>
       <nav className="navbar">
         <div className="navbar-left">
           <img
-            src="profile.jpg"
+            src={userIcon}
             alt="Profile Picture"
             className="profile-picture"
           />
@@ -98,28 +94,26 @@ export default function Navbar() {
       {isOpen && (
         <div className="popup-overlay">
           <div className="popup">
-            <button className="close-popup-button" onClick={togglePopup}>
+            <div className="close-popup-button" onClick={togglePopup}>
               &times;
-            </button>
+            </div>
             <h2>Login</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-group">
                 <input type="email" placeholder="Email" className='input' {...register("email", { required: true })}/>
                   <br />
                   {errors.email && <span style={{fontSize:"small",color:"red"}}>This field is required!</span>}
-                  <br />
                 </div>
                 <div className="form-group">
                 <input type="password" placeholder="Password" className='input' id='showPass'{...register("password", { required: true })}/>
                   <br/>
                   {errors.password && <span style={{fontSize:"small",color:"red"}}>This field is required!</span>}
-                  <br/>
                 </div>
-              New to Textis-Notes?
-              <button className="signup-buttom" onClick={handleSignUp}>
+              Want to signup?
+              <Link className="signup-buttom" to={'/signup'} onClick={()=>setIsOpen(false)}>
                 Signup
-              </button>
-              <button type="submit" className="login-button">
+              </Link>
+              <button type="submit" className="login-button mt-3">
                 Login
               </button>
             </form>

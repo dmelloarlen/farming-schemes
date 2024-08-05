@@ -28,7 +28,7 @@ export default function ApprovedScheams() {
        {data && data.length>0 ?<table className="responsive-table">
         <thead>
           <tr>
-            <th>Image</th>
+            <th>Sr.</th>
             <th>Name</th>
             <th style={{textAlign:"center"}}>Status</th>
           </tr>
@@ -36,13 +36,13 @@ export default function ApprovedScheams() {
         <tbody>
           {data.map((item, index) => (
             <tr key={index}>
-              <td style={{width:"5%"}}>{index+1}</td>
-              <td style={{width:"85%"}}>{item.scheam}</td>
+              <td style={{width:"5%"}}>{index+1}.</td>
+              <td style={{width:"85%"}}>{localStorage.getItem("isAdmin")?`${item.fname}(${item.scheam})`:item.scheam}</td>
               <td style={{textAlign:"center"}}><img src={tickIcon} width={"40px"}/></td>
             </tr>
           ))}
         </tbody>
-      </table>: <h1>no schems yet</h1>}
+      </table>: <h2 className='d-flex justify-content-center'>no schems yet</h2>}
     </div>
   )
 }

@@ -33,12 +33,13 @@ export default function AddScheams() {
       };
   return (
     <div>
-      <div className="container">
+      <div className="container border mt-3">
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
           <input
             type="text"
-            placeholder="Title"
-            className="title1"
+            placeholder="Scheam name"
+            className="title1 w-100 py-2"
+            style={{fontSize:"25px"}}
             {...register("title", { required: true })}
           />
           <br />
@@ -48,10 +49,8 @@ export default function AddScheams() {
             </span>
           )}
           <hr style={{ border: "2px solid red" }} />
-          <br />
-          {/* <input type='text' placeholder='Description'  {...register("disc", { required: true })}/> */}
           <textarea
-            className="disc1"
+            className="w-100"
             placeholder="Enter the description here...."
             rows="10"
             {...register("description", { required: true })}
@@ -62,9 +61,11 @@ export default function AddScheams() {
             </span>
           )}
           <br />
-          <button type="submit" className="addButton">
-            Save
-          </button>
+          <div className="d-flex justify-content-end fs-5">
+            <button type="submit">
+              Add Now
+            </button>
+          </div>
         </form>
       </div>
     </div>
