@@ -32,7 +32,7 @@ export default function Navbar() {
       useEffect(()=>{
           const getuser=async()=>{
             try {
-                const res=await axios.get(`http://localhost:4000/user1/getuser/${localStorage.getItem("id")}`);
+                const res=await axios.get(`https://farming-backend-ldnp.onrender.com/user1/getuser/${localStorage.getItem("id")}`);
                 setUser(res.data)
             } catch (error) {
                 console.log(error)
@@ -58,7 +58,7 @@ export default function Navbar() {
       password: data.password,
     }
     try {
-      const res = await axios.post("http://localhost:4000/user1/login", userInfo);
+      const res = await axios.post("https://farming-backend-ldnp.onrender.com/user1/login", userInfo);
       if(res.data) {
           toast.success("Login successfull!")
           setLogedin(true)

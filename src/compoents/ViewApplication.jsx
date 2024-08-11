@@ -12,7 +12,7 @@ const ViewApplication = () => {
   useEffect(()=>{
     const getApplication=async()=>{
       try {
-        const res=await axios.get(`http://localhost:4000/Applications/myapplication/${a._id}`);
+        const res=await axios.get(`https://farming-backend-ldnp.onrender.com/Applications/myapplication/${a._id}`);
         setData(res.data['0'])
         console.log(res.data['0'])
       } catch (error) {
@@ -26,7 +26,7 @@ const ViewApplication = () => {
   const handleDeleteClick=async()=>{
     if (window.confirm("Are you shure want to delete the application!!")) {
       try {
-        const res=await axios.delete(`http://localhost:4000/Applications/myapplication/${a._id}`);
+        const res=await axios.delete(`https://farming-backend-ldnp.onrender.com/Applications/myapplication/${a._id}`);
         if (res) {
           toast.success("Application Deleted Sucessfully!!");  
           Navigate('/')          
@@ -41,10 +41,10 @@ const ViewApplication = () => {
 
   const handleApproveClick=async()=>{
     try {
-      const res=await axios.post("http://localhost:4000/approved/setapproved",data)
+      const res=await axios.post("https://farming-backend-ldnp.onrender.com/approved/setapproved",data)
       if (res) {
         toast.success("Application approved")
-        const res1=await axios.delete(`http://localhost:4000/Applications/myapplication/${a._id}`);
+        const res1=await axios.delete(`https://farming-backend-ldnp.onrender.com/Applications/myapplication/${a._id}`);
         Navigate('/')
       }
     } catch (error) {

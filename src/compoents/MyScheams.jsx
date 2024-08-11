@@ -13,8 +13,8 @@ export default function MyScheams() {
 useEffect(() => {
   const getScheam = async () => {
     try {
-      const res = await axios.get(isAdmin?"http://localhost:4000/Applications/allapplications":
-        `http://localhost:4000/Applications/applied/${localStorage.getItem("id")}`
+      const res = await axios.get(isAdmin?"https://farming-backend-ldnp.onrender.com/Applications/allapplications":
+        `https://farming-backend-ldnp.onrender.com/Applications/applied/${localStorage.getItem("id")}`
       );
       const scheamId = res.data.map(item => item.scheamId); // Extract scheamId from each item in the array
       const FormId = res.data.map(item => item._id); // Extract scheamId from each item in the array
@@ -28,7 +28,7 @@ useEffect(() => {
                     scheamId.map(async (scheamId) => {
                         // console.log(scheamId)
                       const res1 = await axios.get(
-                        `http://localhost:4000/scheam/schem/${scheamId}`
+                        `https://farming-backend-ldnp.onrender.com/scheam/schem/${scheamId}`
                       );
                       console.log(res1.data)
                       return res1.data;

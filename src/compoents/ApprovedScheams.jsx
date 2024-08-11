@@ -13,7 +13,7 @@ export default function ApprovedScheams() {
   useEffect(()=>{
     const getApproved=async()=>{
       try {
-        const res=await axios.get(!isAdmin?`http://localhost:4000/approved/approvedapp/${localStorage.getItem("id")}`:"http://localhost:4000/approved/approvedapp")
+        const res=await axios.get(!isAdmin?`https://farming-backend-ldnp.onrender.com/approved/approvedapp/${localStorage.getItem("id")}`:"https://farming-backend-ldnp.onrender.com/approved/approvedapp")
         setData(res.data)
         // console.log(res.data)
       } catch (error) {

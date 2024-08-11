@@ -11,7 +11,7 @@ export default function AllScheams() {
         const getScheam = async () => {
           try {
             const res = await axios.get(
-              `http://localhost:4000/scheam/allschems`
+              `https://farming-backend-ldnp.onrender.com/scheam/allschems`
             );
             setData(res.data);
           } catch (error) {

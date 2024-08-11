@@ -14,7 +14,7 @@ export default function ManageScheams() {
         const getScheam = async () => {
           try {
             const res = await axios.get(
-              `http://localhost:4000/scheam/allschems`
+              `https://farming-backend-ldnp.onrender.com/scheam/allschems`
             );
             setData(res.data);
           } catch (error) {
@@ -28,7 +28,7 @@ export default function ManageScheams() {
         if (window.confirm("Are you sure want to delete the scheam?")) {
             try {
                 const res = await axios.delete(
-                  `http://localhost:4000/scheam/schem/${id}`
+                  `https://farming-backend-ldnp.onrender.com/scheam/schem/${id}`
                 );
                 toast.success("Scheam deleted sucessfully!!");
                 window.location.reload()

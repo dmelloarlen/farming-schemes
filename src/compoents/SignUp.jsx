@@ -54,7 +54,7 @@ export default function SignUp() {
           isadmin:isAdmin
         }
         try {
-          const res = await axios.post("http://localhost:4000/user1/signup", userInfo);
+          const res = await axios.post("https://farming-backend-ldnp.onrender.com/user1/signup", userInfo);
           if(res.data) {
               toast.success("Signup successfull!")
               localStorage.removeItem("isPopup")

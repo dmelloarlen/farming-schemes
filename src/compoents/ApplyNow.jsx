@@ -18,7 +18,7 @@ export default function ApplyNow() {
   useEffect(()=>{
     const getScheam1 = async () => {
       try {
-            const res1 = await axios.get(`http://localhost:4000/scheam/schem/${sid.id}`);
+            const res1 = await axios.get(`https://farming-backend-ldnp.onrender.com/scheam/schem/${sid.id}`);
             setData1(res1.data);
             console.log(data1)
           } catch (error) {
@@ -38,7 +38,7 @@ export default function ApplyNow() {
     const formData = new FormData();
     formData.append("image", image);
     console.log(formData);
-    const res = await axios.post("http://localhost:4000/upimg", formData, {
+    const res = await axios.post("https://farming-backend-ldnp.onrender.com/upimg", formData, {
       headers: { "Content-Type": "multipart/form-data" },
     });
     if (res) {
@@ -80,7 +80,7 @@ export default function ApplyNow() {
         };
         try {
         const res = await axios.post(
-            "http://localhost:4000/Applications/apply",
+            "https://farming-backend-ldnp.onrender.com/Applications/apply",
             applicationAdd
         );
         if (res.data) {

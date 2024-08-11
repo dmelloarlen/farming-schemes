@@ -22,7 +22,7 @@ export default function AddScheams() {
             date:currentDate
         }
         try{
-            const res=await axios.post("http://localhost:4000/scheam/addscheam",scheamAdd);
+            const res=await axios.post("https://farming-backend-ldnp.onrender.com/scheam/addscheam",scheamAdd);
             if(res.data){
                 toast.success("Scheam added sucessfully")
                 navigate("/")

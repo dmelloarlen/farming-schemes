@@ -14,7 +14,7 @@ export default function ViewSchem() {
         const getContent = async () => {
           try {
             const res = await axios.get(
-              `http://localhost:4000/scheam/schem/${a.id}`
+              `https://farming-backend-ldnp.onrender.com/scheam/schem/${a.id}`
             );
             setContent(res.data[0]);
         } catch (error) {
