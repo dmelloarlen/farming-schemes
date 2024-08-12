@@ -72,7 +72,7 @@ const ViewApplication = () => {
             <div className="column">
                 <span >
                   {data.photo &&
-                    <img src={require(`../images/${data.photo}`)} width="100px"/>
+                    <img src={data.photo} width="100px"/>
                   }
                 </span>
             </div>

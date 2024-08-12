@@ -41,10 +41,11 @@ export default function ApplyNow() {
     const res = await axios.post("https://farming-backend-ldnp.onrender.com/upimg", formData, {
       headers: { "Content-Type": "multipart/form-data" },
     });
-    if (res) {
+    console.log(res)
+    if (res.statusText=="OK") {
       setTimeout(() => {
-        setCurrentImage(res.data.fname.filename);
-        console.log(res.data.fname.filename);
+        setCurrentImage(res.data.image_url);
+        console.log(res.data.image_url);
       }, 1000);
     }
   };
@@ -105,7 +106,7 @@ export default function ApplyNow() {
       <form onSubmit={handleImageSubmit}>
         <div className="image-container" onClick={triggerFileInputClick} style={currentImage?{border:"none"}:{border:"2px solid black"}}>
           {currentImage ? (
-            <img src={require(`../images/${currentImage}`)} alt="Profile" />
+            <img src={currentImage} alt="Profile" />
           ) : (
             <p>Click to select an image</p>
           )}
