@@ -12,6 +12,7 @@ import ViewApplication from "./compoents/ViewApplication";
 import MyScheams from "./compoents/MyScheams";
 import ApprovedScheams from "./compoents/ApprovedScheams";
 import { Toaster } from "react-hot-toast";
+import Test from "./compoents/Test";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/admin/ApprovedScheams" element={<ApprovedScheams/>} extact></Route>
             <Route path="/applynow/:id" element={<ApplyNow/>} extact></Route>
             <Route path="/viewapplication/:_id" element={<ViewApplication/>} extact></Route>
+            <Route path="/test" element={<Test/>} extact></Route>
           </Routes>
           <Toaster/>
         </BrowserRouter>
