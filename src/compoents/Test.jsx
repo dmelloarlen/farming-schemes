@@ -9,6 +9,7 @@ const Test = () => {
         { id: 1, name: "Tpoly", latitude: 19.213869, longitude: 72.864794 },
         { id: 2, name: "Virar Station", latitude: 19.452910, longitude: 72.812182 },
         { id: 3, name: "Satpala", latitude: 19.43377759, longitude: 72.77879690 },
+        { id: 3, name: "Satpala", latitude: 19.206423, longitude: 72.828924 },
     ];
 
     useEffect(() => {
